@@ -1,0 +1,30 @@
+<resources>
+    <color name="primary">#6200EE</color>
+    <color name="primary_dark">#3700B3</color>
+    <color name="primary_light">#BB86FC</color>
+    <color name="accent">#03DAC5</color>
+    <color name="background">#FFFFFF</color>
+    <color name="text_primary">#000000</color>
+    <color name="text_secondary">#757575</color>
+    <color name="error">#B00020</color>
+    
+    <!-- Material Design compatibility colors -->
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    
+    <!-- Login page colors -->
+    <color name="dark_blue_background">#1a2332</color>
+    <color name="title_blue">#5B9BD5</color>
+    <color name="subtitle_gray">#9BA4B5</color>
+    <color name="login_button_green">#3DD598</color>
+    <color name="input_background">#2A3647</color>
+    <color name="input_hint">#8B95A6</color>
+    <color name="input_text">#E8EBF0</color>
+    <color name="warning_box_background">#F5E6D3</color>
+    <color name="warning_box_text">#6B4E11</color>
+    <color name="success_box_background">#A8E6CF</color>
+    <color name="success_box_text">#1B5E3F</color>
+</resources>
