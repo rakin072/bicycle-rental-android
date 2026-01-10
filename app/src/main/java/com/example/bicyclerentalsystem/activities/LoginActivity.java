@@ -63,13 +63,16 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void loginUser() {
-        String email = emailEditText.getText().toString().trim();
+        String username = emailEditText.getText().toString().trim();
         String password = passwordEditText.getText().toString().trim();
 
-        if (email.isEmpty() || password.isEmpty()) {
+        if (username.isEmpty() || password.isEmpty()) {
             Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show();
             return;
         }
+
+        // Format username as email for Firebase Auth (same as registration)
+        String email = username + "@bicyclerental.com";
 
         authViewModel.login(email, password, new AuthViewModel.AuthCallback() {
             @Override

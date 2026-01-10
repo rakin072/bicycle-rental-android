@@ -6,7 +6,9 @@
     <color name="background">#FFFFFF</color>
     <color name="text_primary">#000000</color>
     <color name="text_secondary">#757575</color>
-    <color name="error">#B00020</color>
+    <color name="error">#F44336</color>
+    <color name="error_light">#FFEBEE</color>
+    <color name="text_error">#D32F2F</color>
     
     <!-- Material Design compatibility colors -->
     <color name="colorPrimary">#6200EE</color>
@@ -27,4 +29,26 @@
     <color name="warning_box_text">#6B4E11</color>
     <color name="success_box_background">#A8E6CF</color>
     <color name="success_box_text">#1B5E3F</color>
+    
+    <!-- Dashboard colors -->
+    <color name="dashboard_background">#1E1E1E</color>
+    <color name="surface_dark">#2A2A2A</color>
+    <color name="stat_card_primary">#1E3A5F</color>
+    <color name="stat_card_secondary">#2A4858</color>
+    <color name="stat_card_tertiary">#3A4F5F</color>
+    <color name="stat_card_error">#4A3540</color>
+    <color name="stat_card_text_secondary">#9BA4B5</color>
+    <color name="table_card_background">#2A2A2A</color>
+    <color name="table_header_background">#333333</color>
+    <color name="table_header_text">#B0B0B0</color>
+    <color name="status_active">#3DD598</color>
+    <color name="status_pending">#FFA726</color>
+    <color name="status_completed">#78909C</color>
+    <color name="status_approved">#66BB6A</color>
+    <color name="status_rejected">#EF5350</color>
+    <color name="payment_type">#FF9800</color>
+    <color name="overdue_type">#F44336</color>
+    <color name="success">#4CAF50</color>
+    <color name="danger_zone">#F44336</color>
+    <color name="card_background">#2A2A2A</color>
 </resources>
