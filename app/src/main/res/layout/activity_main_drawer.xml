@@ -19,11 +19,13 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/dark_blue_background"
-            android:elevation="4dp"
-            app:title="Dashboard"
-            app:titleTextColor="@color/white"
-            app:navigationIcon="@drawable/ic_menu" />
+            android:background="@color/dashboard_background"
+            android:elevation="0dp"
+            app:title="🚴 Dashboard"
+            app:titleTextColor="@color/text_primary"
+            app:titleTextAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+            app:navigationIcon="@drawable/ic_menu"
+            app:navigationIconTint="@color/text_primary" />
 
         <!-- Fragment Container -->
         <FrameLayout
@@ -42,8 +44,10 @@
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header"
         app:menu="@menu/drawer_menu"
-        app:itemIconTint="@color/white"
-        app:itemTextColor="@color/white"
-        android:background="@color/dashboard_background" />
+        app:itemIconTint="@color/text_primary"
+        app:itemTextColor="@color/text_primary"
+        app:itemShapeFillColor="@color/surface_dark"
+        app:itemTextAppearance="@style/TextAppearance.MaterialComponents.Body1"
+        android:background="@color/stat_card_primary" />
 
 </androidx.drawerlayout.widget.DrawerLayout>
