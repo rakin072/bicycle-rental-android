@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardBackgroundColor="@color/stat_card_primary"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="2dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Bicycle Model -->
+        <TextView
+            android:id="@+id/bicycleModelText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mountain Bike Pro"
+            android:textColor="@color/primary"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Owner Email -->
+        <TextView
+            android:id="@+id/ownerEmailText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Owner: owner@bicyclerental.com"
+            android:textColor="@color/text_secondary"
+            android:textSize="14sp"
+            android:layout_marginBottom="4dp" />
+
+        <!-- Rent Date -->
+        <TextView
+            android:id="@+id/rentDateText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rent Date: 2026-01-01"
+            android:textColor="@color/text_primary"
+            android:textSize="14sp"
+            android:layout_marginBottom="4dp" />
+
+        <!-- Due Date -->
+        <TextView
+            android:id="@+id/dueDateText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Due Date: 2026-01-02"
+            android:textColor="@color/text_primary"
+            android:textSize="14sp"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Status Chip -->
+        <com.google.android.material.chip.Chip
+            android:id="@+id/statusChip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Active"
+            android:textColor="@android:color/white"
+            android:layout_marginBottom="8dp"
+            app:chipBackgroundColor="@color/status_active"
+            app:chipCornerRadius="16dp"
+            app:chipMinHeight="28dp" />
+
+        <!-- Return Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/returnButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Return Bicycle"
+            android:textColor="@android:color/white"
+            android:visibility="gone"
+            app:backgroundTint="@color/primary"
+            app:cornerRadius="8dp" />
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

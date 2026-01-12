@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="12dp"
+    android:gravity="center_vertical"
+    android:background="?attr/selectableItemBackground">
+
+    <!-- Bicycle Model -->
+    <TextView
+        android:id="@+id/text_bicycle_model"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:text="City Bike"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:ellipsize="end"
+        android:maxLines="1" />
+
+    <!-- Rent Date -->
+    <TextView
+        android:id="@+id/text_rent_date"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.5"
+        android:text="2026-01-05"
+        android:textColor="@color/subtitle_gray"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:ellipsize="end"
+        android:maxLines="1" />
+
+    <!-- Status Chip -->
+    <com.google.android.material.chip.Chip
+        android:id="@+id/chip_status"
+        android:layout_width="0dp"
+        android:layout_height="32dp"
+        android:layout_weight="1.5"
+        android:text="Active"
+        android:textSize="12sp"
+        android:textColor="@color/white"
+        app:chipBackgroundColor="@color/login_button_green"
+        app:chipCornerRadius="16dp"
+        app:chipMinHeight="32dp"
+        app:chipStartPadding="8dp"
+        app:chipEndPadding="8dp"
+        app:ensureMinTouchTargetSize="false"
+        android:clickable="false"
+        android:focusable="false" />
+
+</LinearLayout>

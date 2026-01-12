@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dashboard_background"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Dashboard Title -->
+        <TextView
+            android:id="@+id/dashboard_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dashboard"
+            android:textColor="@color/white"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Statistics Cards Grid (2x2) -->
+        <GridLayout
+            android:id="@+id/stats_grid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:rowCount="2"
+            android:alignmentMode="alignBounds"
+            android:columnOrderPreserved="false"
+            android:layout_marginBottom="24dp">
+
+            <!-- Card 1: Total Bicycles -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_total_bicycles"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                app:cardBackgroundColor="@color/stat_card_primary"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/label_total_bicycles"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Total Bicycles"
+                        android:textColor="@color/stat_card_text_secondary"
+                        android:textSize="14sp"
+                        android:layout_marginBottom="8dp" />
+
+                    <TextView
+                        android:id="@+id/value_total_bicycles"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="@color/white"
+                        android:textSize="36sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Card 2: Available -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_available"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_row="0"
+                android:layout_column="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                app:cardBackgroundColor="@color/stat_card_secondary"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/label_available"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Available"
+                        android:textColor="@color/stat_card_text_secondary"
+                        android:textSize="14sp"
+                        android:layout_marginBottom="8dp" />
+
+                    <TextView
+                        android:id="@+id/value_available"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="@color/white"
+                        android:textSize="36sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Card 3: Currently Rented -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_currently_rented"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_row="1"
+                android:layout_column="0"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                app:cardBackgroundColor="@color/stat_card_tertiary"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/label_currently_rented"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Currently Rented"
+                        android:textColor="@color/stat_card_text_secondary"
+                        android:textSize="14sp"
+                        android:layout_marginBottom="8dp" />
+
+                    <TextView
+                        android:id="@+id/value_currently_rented"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="@color/white"
+                        android:textSize="36sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Card 4: Total Rentals -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_total_rentals"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_row="1"
+                android:layout_column="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                app:cardBackgroundColor="@color/stat_card_error"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/label_total_rentals"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Total Rentals"
+                        android:textColor="@color/stat_card_text_secondary"
+                        android:textSize="14sp"
+                        android:layout_marginBottom="8dp" />
+
+                    <TextView
+                        android:id="@+id/value_total_rentals"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="@color/white"
+                        android:textSize="36sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </GridLayout>
+
+        <!-- Section: Your Bicycle Models -->
+        <TextView
+            android:id="@+id/section_bicycle_models"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Your Bicycle Models"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="12dp" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_bicycle_models"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="200dp"
+            android:layout_marginBottom="24dp"
+            app:cardBackgroundColor="@color/table_card_background"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <!-- Table Header -->
+                <LinearLayout
+                    android:id="@+id/bicycle_models_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingVertical="8dp"
+                    android:paddingHorizontal="8dp"
+                    android:background="@color/table_header_background">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="Model"
+                        android:textColor="@color/table_header_text"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.5"
+                        android:text="Type"
+                        android:textColor="@color/table_header_text"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Count"
+                        android:textColor="@color/table_header_text"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:gravity="end" />
+
+                </LinearLayout>
+
+                <!-- RecyclerView for Bicycle Models -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_bicycle_models"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="150dp"
+                    android:nestedScrollingEnabled="false"
+                    tools:listitem="@layout/item_bicycle_model" />
+
+                <!-- Empty State -->
+                <TextView
+                    android:id="@+id/empty_bicycle_models"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:text="No content in table"
+                    android:textColor="@color/subtitle_gray"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Section: Recent Rentals -->
+        <TextView
+            android:id="@+id/section_recent_rentals"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Recent Rentals"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="12dp" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_recent_rentals"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="200dp"
+            android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="@color/table_card_background"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <!-- Table Header -->
+                <LinearLayout
+                    android:id="@+id/recent_rentals_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingVertical="8dp"
+                    android:paddingHorizontal="8dp"
+                    android:background="@color/table_header_background">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="Bicycle Model"
+                        android:textColor="@color/table_header_text"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.5"
+                        android:text="Rent Date"
+                        android:textColor="@color/table_header_text"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.5"
+                        android:text="Status"
+                        android:textColor="@color/table_header_text"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:gravity="end" />
+
+                </LinearLayout>
+
+                <!-- RecyclerView for Recent Rentals -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_recent_rentals"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="150dp"
+                    android:nestedScrollingEnabled="false"
+                    tools:listitem="@layout/item_recent_rental" />
+
+                <!-- Empty State -->
+                <TextView
+                    android:id="@+id/empty_recent_rentals"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:text="No recent rentals"
+                    android:textColor="@color/subtitle_gray"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

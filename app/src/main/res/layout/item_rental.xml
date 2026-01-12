@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/rental_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rental Details"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/rental_start_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start Date: YYYY-MM-DD"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/rental_end_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="End Date: YYYY-MM-DD"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/rental_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Status: Active"
+        android:textSize="14sp"
+        android:textColor="@android:color/holo_green_dark" />
+
+</LinearLayout>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardBackgroundColor="@color/stat_card_primary"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="2dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- Bicycle ID -->
+        <TextView
+            android:id="@+id/bicycleIdText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ID: B123456"
+            android:textColor="@color/text_secondary"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Model Name -->
+        <TextView
+            android:id="@+id/modelText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Mountain Bike Pro"
+            android:textColor="@color/primary"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toStartOf="@id/bicycleIdText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Type Chip -->
+        <com.google.android.material.chip.Chip
+            android:id="@+id/typeChip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Physical"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="8dp"
+            app:chipBackgroundColor="@color/status_active"
+            app:chipCornerRadius="16dp"
+            app:chipMinHeight="28dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/modelText" />
+
+        <!-- Owner Email -->
+        <TextView
+            android:id="@+id/ownerEmailText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="owner@bicyclerental.com"
+            android:textColor="@color/text_secondary"
+            android:textSize="14sp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/typeChip" />
+
+        <!-- Rent Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/rentButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rent"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="12dp"
+            app:backgroundTint="@color/primary"
+            app:cornerRadius="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ownerEmailText" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>
