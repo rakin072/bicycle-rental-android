@@ -9,6 +9,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
@@ -53,6 +54,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
+        // Set hamburger (drawer) icon color to Instagram blue (primary)
+        toggle.getDrawerArrowDrawable().setColor(ContextCompat.getColor(this, R.color.primary));
 
         // Setup navigation view
         navigationView.setNavigationItemSelectedListener(this);

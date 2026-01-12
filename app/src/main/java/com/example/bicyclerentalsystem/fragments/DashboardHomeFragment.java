@@ -93,24 +93,60 @@ public class DashboardHomeFragment extends Fragment {
     }
 
     private void loadStatistics() {
-        // Load Total Bicycles
-        databaseReference.child("bicycles").orderByChild("ownerId").equalTo(userId)
+        // Load Total Bicycles - ALL bicycles added by all users
+        databaseReference.child("bicycles")
                 .addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         int total = (int) snapshot.getChildrenCount();
+                        valueTotalBicycles.setText(String.valueOf(total));
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+                        // Handle error
+                    }
+                });
+
+        // Load Available Bicycles - bicycles available for rent
+        databaseReference.child("bicycles")
+                .addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
                         int available = 0;
 
                         for (DataSnapshot bicycleSnapshot : snapshot.getChildren()) {
-                            Boolean isRented = bicycleSnapshot.child("isRented").getValue(Boolean.class);
-                            if (isRented == null || !isRented) {
+                            Boolean isAvailable = bicycleSnapshot.child("isAvailable").getValue(Boolean.class);
+                            if (isAvailable != null && isAvailable) {
                                 available++;
                             }
                         }
 
-                        valueTotalBicycles.setText(String.valueOf(total));
                         valueAvailable.setText(String.valueOf(available));
-                        valueCurrentlyRented.setText(String.valueOf(total - available));
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+                        // Handle error
+                    }
+                });
+
+        // Load Currently Rented - 1 if user has active rental, 0 if not
+        databaseReference.child("rentals").orderByChild("renterId").equalTo(userId)
+                .addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        int currentlyRented = 0;
+
+                        for (DataSnapshot rentalSnapshot : snapshot.getChildren()) {
+                            String status = rentalSnapshot.child("status").getValue(String.class);
+                            if ("Active".equals(status)) {
+                                currentlyRented = 1;
+                                break;
+                            }
+                        }
+
+                        valueCurrentlyRented.setText(String.valueOf(currentlyRented));
                     }
 
                     @Override

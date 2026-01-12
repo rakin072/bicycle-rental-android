@@ -1,54 +1,54 @@
 <resources>
-    <color name="primary">#6200EE</color>
-    <color name="primary_dark">#3700B3</color>
-    <color name="primary_light">#BB86FC</color>
-    <color name="accent">#03DAC5</color>
-    <color name="background">#FFFFFF</color>
-    <color name="text_primary">#000000</color>
-    <color name="text_secondary">#757575</color>
-    <color name="error">#F44336</color>
+    <color name="primary">#0095F6</color>
+    <color name="primary_dark">#0066CC</color>
+    <color name="primary_light">#4DB5F9</color>
+    <color name="accent">#0095F6</color>
+    <color name="background">#000000</color>
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#A8A8A8</color>
+    <color name="error">#ED4956</color>
     <color name="error_light">#FFEBEE</color>
-    <color name="text_error">#D32F2F</color>
+    <color name="text_error">#ED4956</color>
     
     <!-- Material Design compatibility colors -->
-    <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#03DAC5</color>
+    <color name="colorPrimary">#0095F6</color>
+    <color name="colorPrimaryDark">#0066CC</color>
+    <color name="colorAccent">#0095F6</color>
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
     
     <!-- Login page colors -->
-    <color name="dark_blue_background">#1a2332</color>
-    <color name="title_blue">#5B9BD5</color>
-    <color name="subtitle_gray">#9BA4B5</color>
-    <color name="login_button_green">#3DD598</color>
-    <color name="input_background">#2A3647</color>
-    <color name="input_hint">#8B95A6</color>
-    <color name="input_text">#E8EBF0</color>
-    <color name="warning_box_background">#F5E6D3</color>
-    <color name="warning_box_text">#6B4E11</color>
-    <color name="success_box_background">#A8E6CF</color>
-    <color name="success_box_text">#1B5E3F</color>
+    <color name="dark_blue_background">#000000</color>
+    <color name="title_blue">#0095F6</color>
+    <color name="subtitle_gray">#A8A8A8</color>
+    <color name="login_button_green">#0095F6</color>
+    <color name="input_background">#121212</color>
+    <color name="input_hint">#A8A8A8</color>
+    <color name="input_text">#FFFFFF</color>
+    <color name="warning_box_background">#262626</color>
+    <color name="warning_box_text">#FFA726</color>
+    <color name="success_box_background">#1A3A1A</color>
+    <color name="success_box_text">#4CAF50</color>
     
-    <!-- Dashboard colors -->
-    <color name="dashboard_background">#1E1E1E</color>
-    <color name="surface_dark">#2A2A2A</color>
-    <color name="stat_card_primary">#1E3A5F</color>
-    <color name="stat_card_secondary">#2A4858</color>
-    <color name="stat_card_tertiary">#3A4F5F</color>
-    <color name="stat_card_error">#4A3540</color>
-    <color name="stat_card_text_secondary">#9BA4B5</color>
-    <color name="table_card_background">#2A2A2A</color>
-    <color name="table_header_background">#333333</color>
-    <color name="table_header_text">#B0B0B0</color>
-    <color name="status_active">#3DD598</color>
+    <!-- Dashboard colors - Instagram-like dark theme -->
+    <color name="dashboard_background">#000000</color>
+    <color name="surface_dark">#121212</color>
+    <color name="stat_card_primary">#121212</color>
+    <color name="stat_card_secondary">#121212</color>
+    <color name="stat_card_tertiary">#121212</color>
+    <color name="stat_card_error">#121212</color>
+    <color name="stat_card_text_secondary">#A8A8A8</color>
+    <color name="table_card_background">#121212</color>
+    <color name="table_header_background">#000000</color>
+    <color name="table_header_text">#A8A8A8</color>
+    <color name="status_active">#0095F6</color>
     <color name="status_pending">#FFA726</color>
-    <color name="status_completed">#78909C</color>
-    <color name="status_approved">#66BB6A</color>
-    <color name="status_rejected">#EF5350</color>
-    <color name="payment_type">#FF9800</color>
-    <color name="overdue_type">#F44336</color>
+    <color name="status_completed">#A8A8A8</color>
+    <color name="status_approved">#4CAF50</color>
+    <color name="status_rejected">#ED4956</color>
+    <color name="payment_type">#FFA726</color>
+    <color name="overdue_type">#ED4956</color>
     <color name="success">#4CAF50</color>
-    <color name="danger_zone">#F44336</color>
-    <color name="card_background">#2A2A2A</color>
+    <color name="danger_zone">#ED4956</color>
+    <color name="card_background">#121212</color>
 </resources>

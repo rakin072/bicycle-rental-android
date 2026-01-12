@@ -144,31 +144,81 @@ public class RentalsFragment extends Fragment {
                 List<String> bicycleModels = new ArrayList<>();
                 bicycleModels.add("Select a Bicycle");
                 
+                // First, get all bicycles that meet basic criteria
+                List<Bicycle> potentialBicycles = new ArrayList<>();
                 for (DataSnapshot child : snapshot.getChildren()) {
                     Bicycle bicycle = child.getValue(Bicycle.class);
                     if (bicycle != null) {
                         bicycle.setBicycleId(child.getKey());
                         
                         // Check if bicycle is available and not owned by current user
-                        // Use isAvailable() getter method which handles the boolean field properly
                         boolean isAvailableForRent = bicycle.isAvailable();
                         boolean isNotOwnedByUser = !currentUserId.equals(bicycle.getOwnerId());
                         
                         if (isAvailableForRent && isNotOwnedByUser) {
-                            availableBicycles.add(bicycle);
-                            bicycleModels.add(bicycle.getModel() + " (" + bicycle.getType() + ")");
+                            potentialBicycles.add(bicycle);
                         }
                     }
                 }
                 
-                // Update spinner adapter
-                ArrayAdapter<String> adapter = new ArrayAdapter<>(requireContext(), 
-                    android.R.layout.simple_spinner_item, bicycleModels);
-                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                bicycleSpinner.setAdapter(adapter);
-                
-                // Show message if no bicycles available
-                if (availableBicycles.isEmpty()) {
+                // Now check which bicycles are NOT in active rentals
+                if (!potentialBicycles.isEmpty()) {
+                    rentalsRef.orderByChild("status").equalTo("Active")
+                        .addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot rentalSnapshot) {
+                                // Get list of bicycle IDs that are currently rented
+                                List<String> rentedBicycleIds = new ArrayList<>();
+                                for (DataSnapshot child : rentalSnapshot.getChildren()) {
+                                    Rental rental = child.getValue(Rental.class);
+                                    if (rental != null && rental.getBicycleId() != null) {
+                                        rentedBicycleIds.add(rental.getBicycleId());
+                                    }
+                                }
+                                
+                                // Filter out bicycles that are currently rented
+                                for (Bicycle bicycle : potentialBicycles) {
+                                    if (!rentedBicycleIds.contains(bicycle.getBicycleId())) {
+                                        availableBicycles.add(bicycle);
+                                        bicycleModels.add(bicycle.getModel() + " (" + bicycle.getType() + ")");
+                                    }
+                                }
+                                
+                                // Update spinner adapter
+                                ArrayAdapter<String> adapter = new ArrayAdapter<>(requireContext(), 
+                                    android.R.layout.simple_spinner_item, bicycleModels);
+                                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                                bicycleSpinner.setAdapter(adapter);
+                                
+                                // Show message if no bicycles available
+                                if (availableBicycles.isEmpty()) {
+                                    Toast.makeText(requireContext(), 
+                                        "No bicycles available for rent at the moment", 
+                                        Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                            
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
+                                // If check fails, show all potentially available bicycles
+                                for (Bicycle bicycle : potentialBicycles) {
+                                    availableBicycles.add(bicycle);
+                                    bicycleModels.add(bicycle.getModel() + " (" + bicycle.getType() + ")");
+                                }
+                                
+                                ArrayAdapter<String> adapter = new ArrayAdapter<>(requireContext(), 
+                                    android.R.layout.simple_spinner_item, bicycleModels);
+                                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                                bicycleSpinner.setAdapter(adapter);
+                            }
+                        });
+                } else {
+                    // No potential bicycles, update spinner with empty list
+                    ArrayAdapter<String> adapter = new ArrayAdapter<>(requireContext(), 
+                        android.R.layout.simple_spinner_item, bicycleModels);
+                    adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                    bicycleSpinner.setAdapter(adapter);
+                    
                     Toast.makeText(requireContext(), 
                         "No bicycles available for rent at the moment", 
                         Toast.LENGTH_SHORT).show();
