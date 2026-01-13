@@ -149,16 +149,44 @@ public class Rental {
     }
 
     public int getDaysLate() {
-        if (!isOverdue()) return 0;
         try {
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.US);
             Date due = sdf.parse(dueDate);
-            Date today = new Date();
-            long diff = today.getTime() - due.getTime();
-            return (int) (diff / (1000 * 60 * 60 * 24));
+            Date compareDate;
+            
+            // For Active rentals, compare with today
+            // For Completed rentals, compare with return date
+            if ("Active".equals(status)) {
+                compareDate = new Date();
+            } else if ("Completed".equals(status) && returnDate != null) {
+                compareDate = sdf.parse(returnDate);
+            } else {
+                return 0;
+            }
+            
+            // Calculate difference
+            long diff = compareDate.getTime() - due.getTime();
+            int daysLate = (int) (diff / (1000 * 60 * 60 * 24));
+            
+            // Return days late only if positive (was actually late)
+            return Math.max(0, daysLate);
         } catch (Exception e) {
             return 0;
         }
+    }
+    
+    public boolean wasReturnedLate() {
+        if ("Completed".equals(status) && returnDate != null) {
+            try {
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.US);
+                Date due = sdf.parse(dueDate);
+                Date returned = sdf.parse(returnDate);
+                return returned.after(due);
+            } catch (Exception e) {
+                return false;
+            }
+        }
+        return false;
     }
 
     public double calculateOverdueCharges() {

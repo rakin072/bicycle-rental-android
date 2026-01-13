@@ -19,6 +19,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.bicyclerentalsystem.R;
+import com.example.bicyclerentalsystem.activities.MainActivity;
 import com.example.bicyclerentalsystem.adapters.MyRentalAdapter;
 import com.example.bicyclerentalsystem.models.Bicycle;
 import com.example.bicyclerentalsystem.models.PaymentMessage;
@@ -310,8 +311,21 @@ public class RentalsFragment extends Fragment {
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                     Double overdueCharges = snapshot.getValue(Double.class);
                     if (overdueCharges != null && overdueCharges > 0) {
-                        Toast.makeText(requireContext(), "You have overdue charges: " + overdueCharges + " Taka. Please pay first.", 
-                            Toast.LENGTH_LONG).show();
+                        // Show dialog with overdue information
+                        new AlertDialog.Builder(requireContext())
+                            .setTitle("Overdue Payment Required")
+                            .setMessage(String.format("You have overdue charges of %.2f Taka. " +
+                                "Please pay your overdue amount first before renting a new bicycle. " +
+                                "\n\nGo to the Overdue tab to view details and make payment.", overdueCharges))
+                            .setPositiveButton("Go to Overdue", (dialog, which) -> {
+                                // Navigate to Overdue tab (assuming it's the 4th tab)
+                                if (getActivity() != null && getActivity() instanceof MainActivity) {
+                                    ((MainActivity) getActivity()).navigateToOverdueTab();
+                                }
+                            })
+                            .setNegativeButton("Cancel", null)
+                            .setIcon(android.R.drawable.ic_dialog_alert)
+                            .show();
                         return;
                     }
                     

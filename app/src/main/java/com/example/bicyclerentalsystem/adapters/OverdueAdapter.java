@@ -104,6 +104,13 @@ public class OverdueAdapter extends RecyclerView.Adapter<OverdueAdapter.OverdueV
             // Apply red border to card
             cardView.setStrokeColor(errorColor);
             cardView.setStrokeWidth(4);
+            
+            // Show appropriate button text based on status
+            if ("Completed".equals(rental.getStatus())) {
+                payButton.setText("Pay Now (Returned)");
+            } else {
+                payButton.setText("Pay Now");
+            }
         }
     }
 }

@@ -135,8 +135,10 @@ public class OverdueFragment extends Fragment {
                         if (rental != null) {
                             rental.setRentalId(child.getKey());
 
-                            // Check if overdue (Active and past due date)
+                            // Include overdue rentals: Active and past due OR Completed but was returned late
                             if ("Active".equals(rental.getStatus()) && rental.isOverdue()) {
+                                overdueRentals.add(rental);
+                            } else if ("Completed".equals(rental.getStatus()) && rental.wasReturnedLate()) {
                                 overdueRentals.add(rental);
                             }
                         }

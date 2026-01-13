@@ -120,6 +120,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         startActivity(intent);
         finish();
     }
+    
+    public void navigateToOverdueTab() {
+        loadFragment(new OverdueFragment());
+        toolbar.setTitle("Overdue");
+        navigationView.setCheckedItem(R.id.nav_overdue);
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            drawerLayout.closeDrawer(GravityCompat.START);
+        }
+    }
 
     @Override
     public void onBackPressed() {
