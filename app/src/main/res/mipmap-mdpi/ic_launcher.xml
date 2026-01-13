@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    
+    <!-- Background -->
+    <path
+        android:fillColor="#0095F6"
+        android:pathData="M0,0h48v48h-48z"/>
+    
+    <!-- Left wheel -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M14,34c-2.8,0 -5,-2.2 -5,-5s2.2,-5 5,-5s5,2.2 5,5S16.8,34 14,34zM14,26.5c-1.4,0 -2.5,1.1 -2.5,2.5s1.1,2.5 2.5,2.5s2.5,-1.1 2.5,-2.5S15.4,26.5 14,26.5z"/>
+    
+    <!-- Right wheel -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M34,34c-2.8,0 -5,-2.2 -5,-5s2.2,-5 5,-5s5,2.2 5,5S36.8,34 34,34zM34,26.5c-1.4,0 -2.5,1.1 -2.5,2.5s1.1,2.5 2.5,2.5s2.5,-1.1 2.5,-2.5S35.4,26.5 34,26.5z"/>
+    
+    <!-- Frame -->
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="1.5"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M14,29l5.5,-8.5l4,0l5.5,8.5M24,20.5l0,-4M24,16.5c0.8,0 1.5,-0.7 1.5,-1.5s-0.7,-1.5 -1.5,-1.5s-1.5,0.7 -1.5,1.5S23.2,16.5 24,16.5zM19.5,20.5l9,0M28.5,20.5l5.5,8.5M24,20.5l-4,8.5"/>
+</vector>

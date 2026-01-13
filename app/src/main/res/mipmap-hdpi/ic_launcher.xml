@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="72dp"
+    android:height="72dp"
+    android:viewportWidth="72"
+    android:viewportHeight="72">
+    
+    <!-- Background -->
+    <path
+        android:fillColor="#0095F6"
+        android:pathData="M0,0h72v72h-72z"/>
+    
+    <!-- Left wheel -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M21,51c-4.2,0 -7.5,-3.3 -7.5,-7.5s3.3,-7.5 7.5,-7.5s7.5,3.3 7.5,7.5S25.2,51 21,51zM21,39.75c-2.1,0 -3.75,1.65 -3.75,3.75s1.65,3.75 3.75,3.75s3.75,-1.65 3.75,-3.75S23.1,39.75 21,39.75z"/>
+    
+    <!-- Right wheel -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M51,51c-4.2,0 -7.5,-3.3 -7.5,-7.5s3.3,-7.5 7.5,-7.5s7.5,3.3 7.5,7.5S55.2,51 51,51zM51,39.75c-2.1,0 -3.75,1.65 -3.75,3.75s1.65,3.75 3.75,3.75s3.75,-1.65 3.75,-3.75S53.1,39.75 51,39.75z"/>
+    
+    <!-- Frame -->
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="2.25"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M21,43.5l8.25,-12.75l6,0l8.25,12.75M36,30.75l0,-6M36,24.75c1.2,0 2.25,-1.05 2.25,-2.25s-1.05,-2.25 -2.25,-2.25s-2.25,1.05 -2.25,2.25S34.8,24.75 36,24.75zM29.25,30.75l13.5,0M42.75,30.75l8.25,12.75M36,30.75l-6,12.75"/>
+</vector>

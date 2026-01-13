@@ -51,4 +51,7 @@
     <color name="success">#4CAF50</color>
     <color name="danger_zone">#ED4956</color>
     <color name="card_background">#121212</color>
+    
+    <!-- Launcher icon colors -->
+    <color name="ic_launcher_background">#0095F6</color>
 </resources>
